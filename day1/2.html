@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div  class="app">
+        <h2 v-bind:title="biaoti">我是动态添加的属性</h2>
+        <h2 :title="biaoti">我是动态添加的属性</h2>
+        <h2 data-id="aaaa">以前绑点的方法</h2>
+        <h2 :data-id="aaaa">vue绑点自定义属性的方法</h2>
+        <!-- <button v-on:click="dianwo">点击缩写</button> -->
+        <button @click="dianwo">点击缩写</button>
+    </div>
+    <script>
+    
+    new Vue({
+
+        el:".app",
+        data:{
+        //   msg1:"v-bind",
+        //   msg5:"我是一个title",
+          biaoti:"我是一个标题",
+          aaaa:"自定义ID"
+        },
+
+        methods:{
+            dianwo:function(){
+                alert("fds")
+            }
+        }
+    })
+    
+    
+    </script>
+</body>
+</html>

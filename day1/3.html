@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../vue.js"></script>
+    <title>Document</title>
+   
+</head>
+<body>
+    <div  class="app">
+            <h2>{{str}}</h2>
+            <button @click="start">点我,文字动</button>
+            <button @click="moving">点击我设置定时器,让文字跑起来</button>
+                <button @click="stop">停止</button>
+    </div>
+    <script>
+    
+    new Vue({
+
+        el:".app",
+        data:{
+          str:"我是小白,准备境界大神,发送到发斯蒂芬斯蒂芬是否发第三方第三方第三方",
+          dsq:"",
+        },
+
+        methods:{
+            start(){
+                var start=this.str.substring(0,1)
+                var end=this.str.substring(1)
+                this.str=end+start
+            },
+            // moving(){
+            //     var This=this;
+            //    setInterval(function(){
+            //     var start=This.str.substring(0,1)
+            //     var end=This.str.substring(1)
+            //     This.str=end+start;
+            //    },500)
+            // },
+            moving(){
+                clearInterval(this.dsq);
+              this.dsq=setInterval(()=>{
+                    var start=this.str.substring(0,1)
+                var end=this.str.substring(1)
+                this.str=end+start
+                },10)
+            },
+            stop(){
+                clearInterval(this.dsq);
+                this.dsq="";
+               
+            }
+        }
+    })
+    
+    
+    </script>
+</body>
+</html>

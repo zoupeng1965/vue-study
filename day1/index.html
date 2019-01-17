@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <script src="../vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="app">
+        <div v-text="msg"></div>
+        <div v-text="msg1"></div>
+        <div v-html="msg1"></div>
+        <hr>
+        <div v-show="flag">我要先睡</div>
+        <button v-on:click="dianwo">点我</button>
+    </div>
+    <script>
+        new Vue({
+            el:".app",
+            data:{
+                msg:"孺人小白",
+                msg1:"<h1>大多数</h1>",
+                flag:true
+            },
+            methods:{
+                dianwo:function(){
+                    this.flag=!this.flag
+                }
+                
+            }
+        })
+    
+    
+    
+    </script>
+</body>
+</html>

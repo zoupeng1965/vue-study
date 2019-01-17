@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../vue.js"></script>
+    <title>Document</title>
+   
+</head>
+<body>
+    <div  class="app">
+    
+        <ul>
+            <!-- es5 -->
+            <li v-for="(item,index) in list">
+
+                    name:{{item}}
+                    <br>
+                    索引:{{index}}
+
+            </li>
+            <!-- es6 -->
+            <li v-for="(item,index) of list">
+
+                    name:{{item}}
+                    <br>
+                    索引:{{index}}
+
+            </li>
+        </ul>
+
+        <ul>
+
+                <li v-for="(item,key,index) of obj">
+
+                        name:{{item}}
+                        
+                        11:{{key}}
+                        索引:{{index}}
+    
+                </li>
+
+        </ul>
+        <ul>
+
+              <li v-for="(item,index) of str">
+                  name:{{item}}
+                  for:{{index}}
+                
+              </li>
+
+        </ul>
+
+    </div>
+    <script>
+    
+    new Vue({
+
+        el:".app",
+        data:{
+           list:["张三","历史",'王五'],
+           obj:{
+               id:1,
+               name:"信也",
+               des:"撒大多数",
+               pri:"22222"
+           },
+           str:"的沙发是的范德萨"
+        },
+
+        methods:{
+         
+        }
+    })
+    
+    
+    </script>
+</body>
+</html>

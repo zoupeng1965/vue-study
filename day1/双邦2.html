@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../vue.js"></script>
+    <title>Document</title>
+    <style>
+
+
+
+
+    </style>
+
+</head>
+
+<body>
+    <div class="app">
+        请输入name<input type="text" v-model="msg1">
+        请输入des<input type="text" v-model="msg2">
+        请输入pri<input type="text" v-model="msg3">
+        <button @click="add">点我,把值放到对象里面</button>
+
+        <ul>
+            <li v-for="(item,index of obj">
+                    {{item.id}}
+                {{item.name}}
+                {{item.des}}
+                {{item.pri}}
+            </li>
+        </ul>
+    </div>
+    <script>
+
+        let vm = new Vue({
+
+            el: ".app",
+            data: {
+                msg1: "请输入内容",
+                msg2: "请输入内容",
+                msg3: "请输入内容",
+                obj: [
+                    {
+                        id: 1,
+                        name: "信也",
+                        des: "撒大多数",
+                        pri: "22222"
+                    },
+                ]
+            },
+
+            methods: {
+                add() {
+                    var name=this.msg1;
+                    var des=this.msg2;
+                    var pri=this.msg3;
+                    var id=Math.floor(Math.random()*10);
+                    this.obj.push({
+                        id,
+                        name,
+                        des,
+                        pri,
+                    })
+                }
+            }
+
+        })
+
+
+    </script>
+</body>
+
+</html>
