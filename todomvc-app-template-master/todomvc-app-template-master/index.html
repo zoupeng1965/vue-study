@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Template • TodoMVC</title>
+	<link rel="stylesheet" href="node_modules/todomvc-common/base.css">
+	<link rel="stylesheet" href="node_modules/todomvc-app-css/index.css">
+	<!-- CSS overrides - remove if you don't need it -->
+	<link rel="stylesheet" href="css/app.css">
+
+	<script src="./js/vue2.js"></script>
+	<style>
+		.pink{
+			background-color: aqua;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="app">
+		<section class="todoapp">
+			<!--1============================== 头部 -->
+			<header class="header">
+				<h1>代办事项</h1>
+				<input @keyup.enter="add" v-model="text" class="new-todo" placeholder="你是要去卖西瓜吗亲?" autofocus>
+			</header>
+			<!-- This section should be hidden by default and shown when there are todos -->
+			<!--2 ===============================================中部 -->
+			<section class="main">
+				<input id="toggle-all" class="toggle-all" type="checkbox">
+				<label for="toggle-all" @click="quanxuan" :class="{pink:flagg}">Mark all as complete</label>
+				<ul class="todo-list">
+					<!-- These are here just to show the structure of the list items -->
+					<!-- List items should get the class `editing` when editing and `completed` when marked as completed -->
+
+					<li :class="!item.flag?item.sx:''" v-for="(item,index) of list" :key=item.id>
+						<div class="view">
+							<!-- <input class="toggle" type="checkbox" checked @click="flag=!flag"> -->
+							<input class="toggle" type="checkbox" :checked="!item.flag"   @click="bh(item.id)">
+							<label>{{item.name}}</label>
+
+							<button class="destroy" @click="del(item.id)"></button>
+						</div>
+						<input class="edit" value="Create a TodoMVC template">
+					</li>
+					<!-- <li>
+						<div class="view">
+							<input class="toggle" type="checkbox">
+							<label>Buy a unicorn</label>
+							<button class="destroy"></button>
+						</div>
+						<input class="edit" value="Rule the web">
+					</li> -->
+				</ul>
+			</section>
+			<!-- This footer should hidden by default and shown when there are todos -->
+			<!-- ==================================底部 -->
+			<footer class="footer">
+				<!-- This should be `0 items left` by default -->
+				<span class="todo-count"><strong>{{sz}}</strong> item left</span>
+				<!-- Remove this if you don't implement routing -->
+				<ul class="filters">
+					<li>
+						<a class="selected" href="#/">All</a>
+					</li>
+					<li>
+						<a href="#/active">Active</a>
+					</li>
+					<li>
+						<a href="#/completed">Completed</a>
+					</li>
+				</ul>
+				<!-- Hidden if no completed items are left ↓ -->
+				<button class="clear-completed">Clear completed</button>
+			</footer>
+		</section>
+		<footer class="info">
+			<p>Double-click to edit a todo</p>
+			<!-- Remove the below line ↓ -->
+			<p>Template by <a href="http://sindresorhus.com">Sindre Sorhus</a></p>
+			<!-- Change this out with your name and url ↓ -->
+			<p>Created by <a href="http://todomvc.com">you</a></p>
+			<p>Part of <a href="http://todomvc.com">TodoMVC</a></p>
+		</footer>
+	</div>
+	<!-- Scripts here. Don't remove ↓ -->
+	<script src="node_modules/todomvc-common/base.js"></script>
+	<!-- <script src="js/app.js"></script> -->
+	
+
+
+	<!-- ------------------------- -->
+	<script>
+		var vm = new Vue({
+			el: '#app',
+			data: {
+				text: "",
+				
+				flagg:false,
+				sz:0,
+				list: [
+					// { id: 1, name: "卖西瓜",sx:"completed" ,flag:false},
+					// { id: 2, name: "卖菜",sx:"completed" ,flag:false },
+				]
+			},
+			methods: {
+				add() {
+					if (this.text=="") return alert("输入正确的事件")
+					this.list.push({ id: this.list.length*10, name: this.text,sx:"completed",flag:true  })
+					this.text =""
+					this.sz=this.list.length
+				},
+				del(id) {
+					// console.log(typeof id)
+					this.list.some((item, i) => {
+						if (item.id == id) {
+							this.list.splice(i, 1)
+							return true
+						}
+					})
+				},
+				bh(id){
+					// this.list.some((item,i)=>{
+					// 	if(item.id==id){
+					// 		this.list[i].flag=!this.list[i].flag
+					// 	}
+					// })
+					
+					this.list.forEach((item,i) => {
+						if(item.id==id){
+							this.list[i].flag=!this.list[i].flag
+						}	
+					});
+
+					this.list.forEach((item,i) => {
+						console.log(item.flag)
+						this.flagg=true
+						if(item.flag){
+							this.flagg=false 
+						}
+					});
+
+
+					var agg=0;
+					this.list.forEach((item,i) => {
+						
+						if(item.flag){
+							agg++
+						}
+						
+					});
+					this.sz=agg
+					
+				},
+				quanxuan(){
+					// console.log(11)
+					this.list.forEach((item,i) => {
+						item.flag=!item.flag
+					});
+				},
+			},
+		})
+	</script>
+</body>
+
+</html>
