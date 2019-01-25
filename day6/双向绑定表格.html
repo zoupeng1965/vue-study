@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="./vue2.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <input type="text" v-model="a" @input="shijain">+
+            <input type="text" v-model="b" @input="shijain2">=
+            <input type="text" v-model="c" @input="shijain3">
+        </div>
+        <script>
+            var vm = new Vue({
+                el: '#app',
+                data: {
+                    a:"",
+                    b:"",
+                    c:''
+                },
+                methods: {
+                    shijain(){
+                        this.c=this.a+"===="+this.b
+                    },
+                    shijain2(){
+                        this.c=this.a+"===="+this.b
+                    },
+                    shijain3(){
+                       var aa=this.c.split("====")
+                       this.a=aa[0]
+                       this.b=aa[1]
+                    }
+                },
+            })
+        </script>
+    </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="./vue2.js"></script>
+    </head>
+    <body>
+        <div id="app">
+                <input type="text" v-model="a" >+
+                <input type="text" v-model="b" >=
+                <input type="text" v-model="c" >
+                <p >{{c}}</p>
+        </div>
+        <script>
+            var vm = new Vue({
+                el: '#app',
+                data: {
+                    a:"",
+                    b:"",
+                   
+                },
+                computed: {
+                    c(){
+                        console.log(11)
+                        return this.a+"="+this.b
+                    }
+                },
+            })
+        </script>
+    </body>
+</html>

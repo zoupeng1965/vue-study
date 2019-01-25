@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="./vue2.js"></script>
+        <script src="./vue-router-3.0.1.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <h2>哈哈</h2>
+            <router-link to="/azhijain">acctiv</router-link>
+            <router-view></router-view>
+        </div>
+
+        <template id="azhijain">
+            <div>
+               <h2>哈哈哈</h2> 
+               <router-link to="/azhijain/login">login</router-link>
+               <router-link to="/azhijain/register">register</router-link>
+               <router-view></router-view>
+            </div>
+        </template>
+
+
+        <script>
+            let azhijain={
+                template:"#azhijain"
+            }
+            let login={
+                template:"<h2>login哈哈哈</h2> "
+            }
+            let register={
+                template:"<h2>register哈哈哈</h2> "
+            }
+
+             const router = new VueRouter({
+                routes:[
+                    {path:"/azhijain",component:azhijain,
+                    children:[
+                        {path:"login",component:login},
+                        {path:"register",component:register}
+                    ]
+                },
+                   
+                ]
+            })
+
+            var vm = new Vue({
+                el: '#app',
+                data: {
+
+                },
+                router,
+                watch: {
+                    $route(newVal,oldVal){
+                        console.log(newVal)
+                        console.log(oldVal)
+                    }
+                },
+            })
+        </script>
+    </body>
+</html>
