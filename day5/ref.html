@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="./vue2.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <h2 ref="my" >{{msg}}444444</h2>
+            <button @click="click">点我</button>
+        </div>
+        <script>
+            var vm = new Vue({
+                el: '#app',
+                data: {
+                    msg:"as递四方速递"
+                },
+                methods: {
+                    click(){
+                        console.log(this)
+                        console.log(this.$refs.my.innerText)
+                    }
+                },
+            })
+        </script>
+    </body>
+</html>

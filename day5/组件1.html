@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="./vue2.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <my></my>
+        </div>
+
+      <template id="tep">
+            <div>
+                    <h2>{{count}}</h2>
+                    <input type="button" value="+1" @click="add">
+                </div>
+
+      </template>
+        <script>
+            // var obj={count:0}
+            Vue.component("my",{
+                template:"#tep",
+                data:function(){
+                    return {count:0}
+                },
+                methods: {
+                    add(){
+                       this.count++
+                    }
+                },
+            })
+            var vm = new Vue({
+                el: '#app',
+                data: {
+
+                }
+            })
+        </script>
+    </body>
+</html>

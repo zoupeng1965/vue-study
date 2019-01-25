@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./bootstrap-3.3.7.css">
+        <script src="./vue2.js"></script>
+    </head>
+    <body>
+        <div id="app">
+               <comm @func="settext"></comm>
+           
+           <ul class="list-group">
+               <li class="list-group-item" v-for="(item,i) of list" :key="item.id">
+                    <span class="badge">评论人： {{ item.user }}</span>
+                    {{ item.text }}
+               </li>
+            
+           </ul>
+           
+           
+           <button @click.prevent="del" class="btn btn-primary btn-lg">清除评论</button>
+
+        </div>
+        <template id="tep">
+            <div >
+
+                
+               <form>
+                    <legend>评论表格</legend>
+                
+                    <div class="form-group">
+                        <label for="">评论人</label>
+                        <input v-model="username" type="text" class="form-control form-inline "  required id="" placeholder="请输入名字">
+                    </div>
+                    <div class="form-group">
+                            <label for="">评论信息</label>
+                            <textarea v-model="text" type="text" style="height:100px" class="form-control" required placeholder="请输入信息"></textarea>
+                        </div>
+                <button type=button class="btn btn-primary btn-lg" @click="postment">发表评论</button>
+               
+                
+                </form>
+
+
+
+
+            </div>
+            
+        </template>
+        <script>
+
+            var comobj={
+               data(){
+                return {
+                    username:"", 
+                    text:""
+                }
+               },
+                template:"#tep",
+                methods: {
+                    postment(){
+                        if(this.username!=""){
+                           let comment={id:Date.now(),user:this.username,text:this.text}
+                          var list=JSON.parse(localStorage.getItem("cat")||"[]")
+                          list.unshift(comment)
+                          localStorage.setItem("cat",JSON.stringify(list))
+                          this.username=this.text=""
+                        //   console.log(list)
+                        this.$emit("func",100)
+                        // console.log(11)
+                        }
+                    },
+                  
+                },
+            }
+
+            var vm = new Vue({
+                el: '#app',
+                data: {
+                    list:[
+                        // { id:Date.now(),user:"历史",text:"sdfd"},
+                        // { id:Date.now(),user:"历史",text:"sdfd"}
+                    ]
+                },
+                components:{
+                    "comm":comobj
+                },
+                methods: {
+                    settext(val){
+                        console.log(val,555555555555)
+                        this.list=JSON.parse(localStorage.getItem("cat"||"[]"))
+                        console.log(11)
+                    },
+                    del(){
+                        localStorage.removeItem("cat")
+                        this.list=""
+                   }
+                },
+                created() {
+                   this.settext()
+                },
+
+            })
+        </script>
+    </body>
+</html>

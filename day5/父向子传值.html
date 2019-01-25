@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="./vue2.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <input type="text " v-model="msg">
+            <com :text="msg"></com>
+
+        </div>
+        <template id="tep">
+            <div>
+                <hr>
+                <h2>fsdfs </h2>
+                <p>父元素的信息{{text}}</p>
+                <input type="text" v-model="text">
+                <p>{{title}}</p>
+            </div>
+        </template>
+        <script>
+
+            var obj={
+                template:"#tep",
+                props:["text"],
+                data(){
+                    return {
+                        title:444
+                    }
+                }
+
+            }
+
+
+
+
+            var vm = new Vue({
+                el: '#app',
+                data: {
+                    msg:"这是父组件的信息"
+                },
+                components:{
+                    com:obj
+                }
+
+            })
+        </script>
+    </body>
+</html>

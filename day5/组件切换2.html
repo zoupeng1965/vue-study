@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="./vue2.js"></script>
+        <style>
+          .v-enter
+        {
+            transform: translateY(20px) 
+        }
+        .v-leave-to{
+            transform: translateX(150px)
+           
+        }
+        .v-enter-active,
+        .v-leave-active{
+            transition: all 1s linear;
+        }
+        
+        
+        
+        </style>
+    </head>
+    <body>
+        <div id="app">
+            <a href="" @click.prevent="xs='login'">登录</a>
+            <a href=""  @click.prevent="xs='zhuce'">注册</a>
+            <transition mode="out-in">
+                    <component :is="xs"></component>
+            </transition>
+          
+        </div>
+        <template id="tep">
+            <h2>登录</h2>
+        </template>
+        <template id="tepm">
+                <h2>注册</h2>
+            </template>
+        <script>
+
+            Vue.component("login",{
+                template:"#tep"
+            })
+            Vue.component("zhuce",{
+                template:"#tepm"
+            })
+
+
+
+            var vm = new Vue({
+                el: '#app',
+                data: {
+                    xs:"login"
+                }
+            })
+        </script>
+    </body>
+</html>

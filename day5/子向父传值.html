@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="./vue2.js"></script>
+    </head>
+    <body>
+        <div id="app">
+           <h2>{{use}}</h2>
+           <hr>
+           <com @func="add">{{zys}}</com>
+           
+        </div>
+
+        <template id="tep">
+            <div>
+                <input type="text" v-model="zys">
+                <button @click="gei">给爸爸</button>
+            </div>
+        </template>
+        <script>
+
+            var obj={
+                template:"#tep",
+                data(){
+                    return {
+                        zys:"是范德萨发的"
+                    }
+                },
+                methods: {
+                    gei(){
+                        this.$emit("func",this.zys)
+                    }
+                },
+            }
+
+
+
+
+            var vm = new Vue({
+                el: '#app',
+                data: {
+                    msg:"父元素",
+                    use:"会变化吗"
+                },
+                methods: {
+                    add(use){
+                        this.use=use
+                    }
+                },
+                components:{
+                    com:obj
+                }
+            })
+        </script>
+    </body>
+</html>

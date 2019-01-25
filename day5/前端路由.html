@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="./vue2.js"></script>
+    <script src="./vue-router-3.0.1.js"></script>
+
+</head>
+
+<body>
+    <div id="app">
+        <h2>的沙发是的范德萨</h2>
+        <com></com>
+        <router-view></router-view>
+
+        <router-link to="/login">登录</router-lin>
+        <router-link to="/aaa">注册</router-lin>
+    </transition>
+    </div>
+    <script>
+
+        var login = {
+            template: '<h1>登录组件login</h1>'
+        }
+
+        var gif = {
+            template: '<h1>注册组件register</h1>'
+        }
+        var register = {
+            template: '<h1>多个梵蒂冈地方高规格的尴尬</h1>'
+        }
+        Vue.component("com",register)
+
+        // 1创建路由对象
+        var ret=new VueRouter({
+            routes:[// 路由匹配规则 
+                 // 每个路由规则，都是一个对象，这个规则对象，身上，有两个必须的属性：
+        //  属性1 是 path， 表示监听 哪个路由链接地址；
+        //  属性2 是 component， 表示，如果 路由是前面匹配到的 path ，则展示 component 属性对应的那个组件
+                 {path:"/",redirect:"/login"},// 这里的 redirect 和 Node 中的 redirect 完全是两码事
+                {path:"/login",component:login},
+                {path:"/aaa",component:gif},
+            ]
+        })
+
+        var vm = new Vue({
+            el: '#app',
+            data: {
+
+            },
+            router:ret
+        })
+    </script>
+</body>
+
+</html>
