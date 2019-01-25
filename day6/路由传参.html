@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="./vue2.js"></script>
+        <script src="./vue-router-3.0.1.js"></script>
+    </head>
+    <body>
+        <div id="app">
+
+           <router-view></router-view>
+
+        </div>
+        <template id="list">
+            <div>
+                <h1>这是李彪也</h1>
+                <!-- query传值 -->
+                <!-- <router-link :to="`/info?id=${text}`">跳转</router-link> -->
+                <!-- params传值 -->
+                <router-link :to="`/info/${text}`">跳转</router-link>
+            </div>
+        </template>
+
+        <template id="info">
+                <div>
+                    <h1>这是详情页</h1>
+                    <!-- <p>参数为:{{$route.query.id}}</p> -->
+                    <p>参数为:{{$route.params.id}}</p>
+                </div>
+            </template>
+        <script>
+
+            // 列表页
+            let list={
+                template:"#list",
+                data(){
+                    return {
+                        text: Date.now()
+                        // text: 1
+                    }
+                }
+            }
+
+            //详情页
+            let info={
+                template:"#info",
+                created() {
+                    console.log(this.$route.query.id)
+                },
+            }
+
+             const router = new VueRouter({
+                routes:[
+                    {path:"/",redirect:"/list"},
+                    {path:"/list",component:list},
+                    {path:"/info/:id",component:info},
+                ]
+            })
+
+
+
+
+
+
+            var vm = new Vue({
+                el: '#app',
+                data: {
+
+                },
+                router
+            })
+        </script>
+    </body>
+</html>

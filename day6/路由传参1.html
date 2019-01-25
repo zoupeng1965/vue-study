@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="./vue2.js"></script>
+    <script src="./vue-router-3.0.1.js"></script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .listli {
+            border: 1px solid #000;
+            margin-top: 10px;
+            padding: 10px;
+            margin-left: 10px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+
+        <router-view></router-view>
+    </div>
+
+    <template id="list">
+        <div>
+            <h2>列表页面</h2>
+            <ul class="listul">
+                <!-- <li v-for="(item,i) of lists" :key="item.id" class="listli"> -->
+                <!-- <router-link tag="li" :to="`/info?id=${item.id}`" v-for="(item,i) of lists" :key="item.id" class="listli"> -->
+                    <router-link tag="li" :to="`/info/${item.id}`" v-for="(item,i) of lists" :key="item.id" class="listli">
+                    <h3>标题:{{item.title}}</h3>
+                    <p>id:{{item.id}}</p>
+                    <p>内容简介:{{item.content}}</p>
+                </router-link>
+
+                <!-- </li> -->
+            </ul>
+        </div>
+    </template>
+
+    <template id="info">
+        <div>
+           <h2>我是详细页</h2> 
+           <!-- <p>参数是:{{$route.query.id}}</p> -->
+           <p>参数是:{{$route.params.id}}</p>
+        </div>
+    </template>
+    <script>
+
+        let list = {
+            template: "#list",
+            data() {
+                return {
+                    // Math.ceil(Math.random()*10)
+                    lists: [
+                        { id: 1, title: "素馅熊", content: "发顺丰收到方法" },
+                        { id: 2, title: "肉馅熊", content: "发生的郭德纲" },
+                        { id: 3, title: "1馅熊", content: "更丰富黄飞鸿" },
+                        { id: 4, title: "2馅熊", content: "5214奋斗奋斗的" },
+                        { id: 5, title: "3馅熊", content: "85621撒范德萨范德萨发" },
+                    ]
+                }
+            }
+
+        }
+        let info={
+            template:"#info",
+            created() {
+                console.log(this.$route)
+            },
+        }
+
+
+        const router = new VueRouter({
+            routes: [
+                { path: "/", redirect: "/list" },
+                { path: "/list", component: list },
+                { path: "/info/:id", component: info},
+            ]
+        })
+
+
+        var vm = new Vue({
+            el: '#app',
+            data: {
+
+            },
+            router
+        })
+    </script>
+</body>
+
+</html>
