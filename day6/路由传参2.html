@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="./vue2.js"></script>
+        <script src="./vue-router-3.0.1.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <h3>5555555555555</h3>
+          <input type="text" v-model="msg2">
+          <input type="text" v-model="msg3">
+          <input type="text" v-model="msg4">
+                <hr>
+            
+            <router-view></router-view>
+        </div>
+
+        <template id="list">
+            <div>
+               <h2>这是历史</h2> 
+               
+               <router-link tag="p" :to="`/info/${msg}`">info</router-link>
+            </div>
+        </template>
+        <template id="info">
+            
+                <div>
+                   <h2>这是第三方第三方</h2> 
+                   <p>参数是:{{$route.params.id}}</p>
+                   <router-link tag="p" to="/list">list</touter-link>
+                </div>
+            </template>
+        <script>
+
+            let list={
+                template:"#list",
+                data(){
+                    return{
+                        msg:33
+                    }
+                }
+            }
+            let info={
+                template:"#info",
+                created() {
+                    console.log(this.$route)
+                },
+            }
+             const router = new VueRouter({
+                routes:[
+                    {path:"/",redirect:"/list"},
+                    {path:"/list",component: list},
+                    {path:"/info/:id",component: info},
+                ]
+            })
+
+            var vm = new Vue({
+                el: '#app',
+                data: {
+                    msg2:2,
+                    msg3:3,
+                    // msg4:4
+                },
+                router,
+                watch: {
+                    $route(news,old){
+                        console.log(news,22)
+                      if(news.matched[0].path=="/info/:id"){
+                          alert("欢迎来到info页面")
+                      }else if(news.path=="/list"){
+                          alert("欢迎来到list页面")
+                      }
+                    },
+                    msg2(){
+                        console.log("msg2变化了,222222")
+                    }
+                },
+                computed: {
+                    msg4(){
+                        console.log(typeof this.msg2)
+                        return this.msg2*1+this.msg3*1
+                    }
+                },
+            })
+        </script>
+    </body>
+</html>
