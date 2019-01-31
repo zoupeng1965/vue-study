@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="./vue2.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <input type="text" v-model="msg">
+            <p>{{msg}}</p>
+        </div>
+        <script>
+            var vm = new Vue({
+                el: '#app',
+                data: {
+                    msg:12
+                },
+                beforeCreate() {
+                     // 为可以调用数据,方法
+                    console.log("beforeCreate")
+                    console.log(this.msg);
+                },
+                created() {
+                    // 可以调用数据,方法
+                    console.log("created")
+                    console.log(this.msg);
+                    
+                },
+                beforeMount() {
+                    console.log("beforeMount")
+                    console.log(this.msg);
+                    // console.log(window)
+                },
+                mounted() {
+                    console.log("mounted")
+                },
+                beforeUpdate() {
+                    console.log(this.msg,"beforeUpdate")
+                },
+                updated() {
+                    console.log(this.msg,"updated")
+                },
+                beforeDestroy() {
+                    console.log("beforeDestroy")
+                },
+                destroyed() {
+                    console.log("destroyed")
+                },
+            })
+        </script>
+    </body>
+</html>

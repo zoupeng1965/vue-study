@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="./vue2.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <p @click="show">{{msg}}</p>
+            <item></item>
+            <comm></comm>
+
+        </div>
+        <script>
+            // 定义全局组件
+            Vue.component("item",{
+                template:"<h2>你好</h2>"
+            })
+            var item1={
+                template:"<div>aaaa</div>"
+            }
+            var vm = new Vue({
+                el: '#app',
+                data: {
+                    msg:"hello,world"
+                },
+                methods: {
+                    show(){
+                        console.log(111)
+                    }
+                },
+                components:{
+                    "comm":item1
+                }
+            })
+        </script>
+    </body>
+</html>

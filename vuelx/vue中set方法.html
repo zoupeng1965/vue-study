@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="./vue2.js"></script>
+        <style>
+            *{
+                margin: 0;
+        padding: 0;
+        list-style: none; 
+            }
+        
+        </style>
+    </head>
+    <body>
+        <div id="app">
+                <button @click='addData'>点击增加对象数据</button>
+                <h3>往对象里增加方法</h3>
+                <ul>
+                    <li v-for="(val,key,i) of obj">
+                            值:{{val}}------key:{{key}}-------索引:{{i}}   
+                    </li>
+                </ul>
+        </div>
+        <script>
+            var vm = new Vue({
+                el: '#app',
+                data: {
+                    obj:{
+                        title:"fds",
+                        name:2,
+                        age:5,
+                        sex:8
+                    }
+                },
+                methods: {
+                    // addData(){
+                    //     console.log(11);
+                        
+                    // }
+                    addDate(){
+                        // Vue.set(this.obj,Math.random(),'red')
+                        Vue.set(this.obj,'skin'+Math.random(),'red')
+                    }
+                },
+            })
+        </script>
+    </body>
+</html>

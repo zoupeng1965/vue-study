@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="./vue2.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <table>
+                <h3>222222222</h3>
+                <tbody>
+                    <row></row>
+                    <row></row>
+                    <row></row>
+                </tbody>
+            </table>
+        <br>
+        <table>
+            <tbody>
+                <tr is="row"></tr>
+                <tr is="row"></tr>
+                <tr is="row"></tr>
+            </tbody>
+        </table>
+        <br>
+       <ul>
+            <li is="row"></li>
+            <li is="row"></li>
+       </ul>
+        </div>
+        <template id="bb">
+            <tr>
+                <td>22222</td>
+            </tr>
+        </template>
+        <script>
+            var aa={
+                template:"#bb"
+            }
+            var vm = new Vue({
+                el: '#app',
+                data: {
+
+                },
+                components:{
+                    "row":aa
+                    
+                }
+            })
+        </script>
+    </body>
+</html>

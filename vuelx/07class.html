@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="./vue2.js"></script>
+        <style>
+        
+            .active{
+                background-color: red;
+            }
+            .aa{
+                font-size: 50px;
+            }
+        
+        </style>
+    </head>
+    <body>
+        <div id="app">
+            <div :class="[active]" @click="change">{{msg}}</div>
+            <p :class="[active,{aa:flag}]" @click="bb">{{ss}}</p>
+        </div>
+        <script>
+            var vm = new Vue({
+                el: '#app',
+                data: {
+                    msg:"hello world",
+                    ss:"沙发是的范德萨对方水电费水电费第三方的",
+                    active:"active",
+                    flag:true
+                },
+                methods: {
+                    change(){
+                        this.active=this.active=="active"?"":"active"
+                      
+                    },
+                    bb(){
+                    
+                    console.log(11)
+                    this.flag=!this.flag
+                    }
+                },
+            })
+        </script>
+    </body>
+</html>
