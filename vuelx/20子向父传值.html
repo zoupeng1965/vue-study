@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="./vue2.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <h2>{{msg}}</h2>
+            <comm @fun="chang"></comm>
+        </div>
+
+        <template id="aa">
+            <div>
+              <h3>11111111111</h3>
+              <button @click="add">点我</button>
+           </div>
+        </template>
+        <script>
+            var comm={
+                template:"#aa",
+                methods: {
+                    add(){
+                        // console.log(11)
+                    this.$emit("fun","sddfsfsdff");
+                    
+                    }
+                },
+            }
+            var vm = new Vue({
+                el: '#app',
+                data: {
+                    msg:55
+                },
+                methods: {
+                    chang(da){
+                        this.msg=da
+                    }
+                },
+                components:{
+                    comm
+                }
+            })
+        </script>
+    </body>
+</html>

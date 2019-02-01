@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="./vue2.js"></script>
+    </head>
+    <body>
+        <div id="app">
+                <item @fasong="jieshow" ref="one"></item>
+                <item @fasong="jieshow"  ref="two"></item>
+                <div>和{{total}}</div>
+        </div>
+        <script>
+            Vue.component("item", {
+                data(){
+                    return {
+                        num:0
+                    }
+                },
+                template:"<div @click='add'>{{num}}</div>",
+                methods: {
+                    add(){
+                        this.num++
+                        this.$emit("fasong")
+                    }
+                },
+            })
+            var vm = new Vue({
+                el: '#app',
+                data: {
+                    total:0
+                },
+                methods: {
+                    jieshow(){
+                        this.total=this.$refs.one.num+this.$refs.two.num
+                    }
+                },
+            })
+        </script>
+    </body>
+</html>
