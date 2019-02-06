@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+	function nain(year) {
+			var ff=false;
+			if(year%4==0&&year%100!=0||year%400==0){
+				ff=true;
+		}
+		return ff;
+	}
+	console.log(nain(2008));
+	console.log(nain(2100));
+		
+
+		function tian(year,yue,ri){
+			var day=ri;
+		for(var i=1;i<yue;i++){
+			if( i==1||i==3||i==5||i==7||i==8||i==10||1==12){
+				day+=31;
+			}else if(i==2){
+				// alert(1);
+				if(nain(year)){
+					day+=29;
+				}else{
+					day+=28;
+				}
+			}else{
+				day+=30;
+			}
+			
+			}
+			return day;
+		}
+		
+		console.log(tian(2008,1,3))
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

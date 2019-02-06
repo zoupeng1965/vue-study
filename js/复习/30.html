@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		var ldh={
+			name:'刘德华',
+			age:18,
+			xing:function(){
+				console.log('三大');
+			}
+		}
+		console.log(ldh.name);
+		ldh.xing();
+
+
+		var ldh=new Object();
+		ldh.name='刘德华';
+		ldh.age=18;
+		ldh.xing=function(){
+			console.log('三大')
+		}
+		console.log(ldh.name);
+		ldh.xing();
+
+		function Mx(name,age){
+			this.name=name;
+			this.age=age;
+			this.xing=function(){
+				console.log('三大')
+			}
+		}
+		var ldh=new Mx('刘德华',18)
+		console.log(ldh.name);
+		console.log(ldh.age);
+		ldh.xing();
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

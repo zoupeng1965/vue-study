@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+	// 求任意数最大值;
+		function zd() {
+			var max=arguments[0];
+			for(var i=1;i<arguments.length;i++){
+				if(max<arguments[i]){
+					max=arguments[i]
+				}
+			}
+			return max;
+		}
+		console.log(zd(3,45,67,2,30))
+
+
+
+		// 基本语法
+		// function sayhi(){}
+		// 调用
+		// sayhi();
+
+		// 匿名函数
+		// function(){}
+
+		// 使用方法
+		// 函数表达式
+		// var fn=function(){}
+		// fn()
+
+		// 自调用
+		// (function(){}) ()
+
+		function backfn(){
+			return function(){
+				console.log('我是作为返回值使用滴')
+			
+		}
+		var fn=backfn();
+		fn();
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

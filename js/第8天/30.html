@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		// 封装一个对数组元素进行冒泡排序的函数（从大到小）
+		function mp(arry){
+			for(var i=0;i<arry.length-1;i++){
+				for(var j=0;j<arry.length-1-i;j++){
+					if(arry[j]<arry[j+1]){
+						var pre=arry[j];
+						arry[j]=arry[j+1];
+						arry[j+1]=pre;
+					}
+				}
+			}
+			return arry;
+
+		}
+		var arr1=[1,2,3,4,5]
+		console.log(mp(arr1));
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		var zcj=0;
+		var pj=0;
+		var num=prompt('请输入班级总人数');
+		for(var i=1;i<=num;i++){
+			var cj=prompt('请输入第'+i+'名学生的成绩')
+			zcj=zcj+parseFloat(cj);
+			pj=zcj/num;
+
+		}
+		alert('总成绩'+zcj);
+		alert('平均成绩'+pj);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

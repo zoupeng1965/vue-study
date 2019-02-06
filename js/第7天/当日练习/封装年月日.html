@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		// function nyr(){
+		// 	var date=new Date();
+		// 	var year=date.getFullYear();
+		// 	var mobth=date.getMonth();
+		// 	var dates=date.getDate();
+		// 	var arr=['星期天','星期一','星二','星期'星期四','星期五','星期六',]
+		// 	var day=date.getDay();
+		// 	// return year+'年'+mobth+'月'+dater+'日'
+		// 	return year+'年'+mobth+'月'+dates+'日'+arr[day];
+		// }
+		// console.log(nyr());
+	
+	function nyr(){
+		var date=new Date();
+		var year=date.getFullYear();
+		var mobth=date.getMonth()+1;
+		var dates=date.getDate();
+		var day=date.getDay();
+		var arr = ['星期天', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+
+		var h=date.getHours();
+			h=h<10?'0'+h:h;
+			var m=date.getMinutes();
+			m=m<10?'0'+m:m;
+			var s=date.getSeconds();
+			s=s<10?'0'+s:s;
+			return year +'年'+mobth+'月'+dates+arr[day]+h+'点'+m+'分'+s+'秒';
+
+	}
+	console.log(nyr());
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

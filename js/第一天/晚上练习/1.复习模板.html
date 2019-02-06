@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+       
+    </script>
+</head>
+<body>
+    ------------复习----------------------
+    1.JS的三种书写方式
+        内嵌JS: head中的script标签中
+        外链JS: head中script:src引入js文件
+        行内JS: 标签上 onclick="alert()";
+    2.变量的基本使用
+        变量的作用: 存储数据
+        变量的语法: var 变量名 = 要存的值;
+
+        变量的其他用法:
+            多个变量同时声明,分别赋值.
+                var a,b,c;
+                a=10;
+                b=20;
+                c=30;
+            多个变量同时声明并赋值
+                var a=10,b=20,c=30;
+            
+        变量的注意点:
+            变量未声明直接使用,报错.   console.log(abc)
+            变量声明未赋值,会undefined ;  var abc; console.log(abc)
+            变量未定义,直接赋值,正常显示,但不推荐 abc=123; console.log(abc)
+
+        变量的命名规范:
+            1.字母,数字,下划线,$符号的组合
+            2.数字不能开头,不能是中文
+            3.不能是关键字或者保留字 name var function
+            4.区分大小写
+
+            5.建议使用驼峰命名法: userName
+    
+    3.数据类型
+        字面量: 一个不变的值, 5就是数值字面量  "张三"就是字符串字面量 
+        数值类型:  表示数字  Number
+        字符串类型: 表示字符  String
+        布尔类型:   表示真假,只有true或者false Boolean
+        未定义类型: 表示不认识 Undefined
+
+    4.数据类型检测
+       console.log(typeof num) 可以返回数据的类型.
+    
+    5.数据类型转换
+        转换成字符串类型:
+            str.toString() 
+            String(str)
+            区别:绝大部分的类型可以用toString来转换,少部分数据没有该方法,使用String()转换
+        
+        转换成数值类型:
+            parseInt();  可以将开头是数字的转换成整数.
+            parseFloat(); 可以将开头是数字的转换成浮点数,只认识第一个小数点
+            Number();     只能将全是数字的类型,转换成数值类型.
+    
+    6.其他
+        进制: 十进制  八进制(0开头)  十六进制(0x开头)
+        注释: ctrl+/        
+        NaN: 是一个结果,该结果不是数字
+        isNaN(): 检测不是人
+        转义字符: \n   \t
+        浮点数计算问题: 浮点数计算会造成精度丢失,避免计算
+        字符串拼接和长度: 数值相加,字符相连, str.length
+        单双引号的使用: 单引号双引号都可以,,建议使用单引号.
+        JS输出打印: alert() prompt() console.log()
+        交换两个变量的值:使用临时变量                
+        数字的最大范围:Number.MAX_VALUE,Number.MIN_VALUE 
+                      Infinity 
+
+    --------------------晚上练习--------------------------
+    1.JS的三种书写方式
+    2.变量的基本使用
+    3.变量交换两个值
+    4.数据类型检测
+    5.数据类型转换
+
+    学习的目的,为什么要学习? 学的是什么?
+    学习的目的:是为了学习知识
+    为什么要学习: 因为知识能赚钱
+            -------中间两个环节: 知识积累到一定的量
+                                要将知识转换成能力
+    学习的是什么? 学习能力和方法
+    
+
+
+
+
+</body>
+</html>

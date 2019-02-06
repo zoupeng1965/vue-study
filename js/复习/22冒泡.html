@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		function mp(arry){
+			for(var i=0;i<arry.length-1;i++){
+				for(var j=0;j<arry.length-1-i;j++){
+					if(arry[j]>arry[j+1]){
+						var pre=arry[j];
+						arry[j]=arry[j+1];
+						arry[j+1]=pre;
+					}
+				}
+
+			}
+			return arry;
+		}
+		var arr1=[5,4,3,2,1];
+		var arr2=[34,35,76,12,45];
+		console.log(mp(arr1));
+		console.log(mp(arr2));
+	</script>
+
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		function bdx(arry){
+			var max=arry[0];
+			for(var i=1;i<arry.length-1;i++){
+				if(max<arry[i]){
+					max=arry[i]
+				}
+			}
+			return max;
+		}
+		var arr1=[22,22,3,4,5,77];
+		console.log(bdx(arr1));
+
+		var max=arr1[0];
+			for(var i=1;i<arr1.length-1;i++){
+				if(max>arr1[i]){
+					max=arr1[i]
+				}
+			}
+			console.log(max);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

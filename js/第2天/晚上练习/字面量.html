@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		//对象中包含属性和函数(也叫方法),分开写太麻烦
+		//所以写在一个大括号中
+		var dog={
+			name:"小黑",
+			type:"中华田园犬",
+			color:"红色",
+			eat:function({
+				console.log("小黑吃的很快");
+			}
+
+		}
+		//以上就是定义一个小黑的中华田园犬的描述,能吃,并且是红色,调用的时候dog+点的方式
+		console.log(dog.name+"--"+dog.type+"--"+dog.color);
+		dog.eat();
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

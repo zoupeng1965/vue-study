@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		// 求和与平均值
+		// var arr=[2,6,1,7, 4] ;
+		// var num=0;
+		// for(var i=0;i<arr.length;i++){
+		// 	num+=arr[i];
+		// }
+		// var pjz=num/arr.length;
+		// console.log(num);
+		// console.log(pjz);
+		
+
+		//求最大值(申明一个新max)
+		// var arr=[2,6,1,77,52,25,6];
+		// var max=arr[0];
+		// for(var i=0;i<arr.length;i++){
+		// 	if(max<arr[i]){
+		// 		max=arr[i];
+		// 	}
+		// }
+		// console.log(max);
+
+
+
+
+
+		// > 要求：要求将数组  [2, 0, 6, 1, 77, 0, 52, 0, 25, 7]  大于等于 10 的 元素选出来 ，放入 新数组
+		// 申明一个新数组,一个新变量索引号;
+
+		// var arr=[2, 0, 6, 1, 77, 0, 52, 0, 25, 7];
+		// var arr1=[];
+		// var j=0;
+		// for(var i=0;i<arr.length;i++){
+		// 	if(arr[i]>=10){
+		// 		arr1[j]=arr[i];
+		// 		j++;
+		// 	}
+		// }
+		// console.log(arr1);
+
+
+
+		// 要求：要求将数组[2, 0, 6, 1, 77, 0, 52, 0, 25, 7]中的 0 去掉后 形成一个不包含 0 的新数组。
+		// var arr=[2, 0, 6, 1, 77, 0, 52, 0, 25, 7];
+		// var arr1=[];
+		// for(var i=0;i<arr.length;i++){
+		// 	if(arr[i]!=0){
+		// 		arr1[arr1.length]=arr[i];
+		// 	}
+		// }
+		// console.log(arr1);
+
+
+		// ，翻转数组，将数组   ['red', 'green', 'blue', 'pink', 'purple'] 的内容 反过来存放。
+
+		// var arr=['red', 'green', 'blue', 'pink', 'purple'];
+		// var arr1=[];
+		// for(var i=0;i<arr.length;i++){
+		// 	arr1[arr1.length]=arr[arr.length-1-i];
+		// }
+		// console.log(arr1);
+
+
+
+
+// ​    冒泡排序：是一种算法,把一系列的数据按照一定的顺序进行排列显示(从小到大,从大到小）
+	 	var arr=[5, 4, 3, 2, 1];
+	 	
+	 	for (var i=0;i<arr.length-1;i++){
+	 		for(var j=0;j<arr.length-1-i;j++){
+	 			if(arr[j]>arr[j+1]){
+	 				var num=arr[j];
+	 				arr[j]=arr[j+1];
+	 				arr[j+1]=num;
+
+	 			}
+	 		}
+	 	}
+	 	console.log(arr);
+	
+
+
+
+		
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		// function djs(jz){
+			
+		// 	var zs= (+new Date('2018/9/30')- +new Date())/1000;
+		// 	console.log(zs);
+		// 	d = parseInt(zs/ 60 / 60 / 24);
+		// 	h = parseInt(zs / 60 / 60 % 24) ;
+		// 	 m = parseInt(zs / 60 % 60);
+		// 	  s = parseInt(zs % 60);
+		// 	  return '距离结束'+d+'天'+h+'小时'+m+'分钟'+s+'秒';
+		// }
+		// console.log(djs('2018/9/30'))
+
+
+		function djs(jz){
+			var date1=new Date(jz);
+			var date2=new Date();
+			var zs=(date1.getTime()-date2.getTime())/1000;
+			d = parseInt(zs/ 60 / 60 / 24);
+			d=d<10?'0'+d:d;
+			h = parseInt(zs / 60 / 60 % 24) ;
+			h=h<10?'0'+h:h;
+
+			 m = parseInt(zs / 60 % 60);
+			 m=m<10?'0'+m:m;
+
+			  s = parseInt(zs % 60);
+			  s=s<10?'0'+s:s;
+
+			  return '距离结束'+d+'天'+h+'小时'+m+'分钟'+s+'秒';
+			}
+			console.log(djs('2018/9/30'));
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

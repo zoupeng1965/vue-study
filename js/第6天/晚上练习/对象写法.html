@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		字面量对象
+		var ldh={
+			name:'刘德华',
+			age:18,
+			sex:'男',
+			sing:function (){
+				console.log('电风扇')
+			}
+		}
+		console.log(ldh.name)
+		ldh.sing();
+
+
+		对象创建写法
+		var ldh=new Object();
+		ldh.name='刘德华';
+		ldh.age=18;
+		ldh.sex='男';
+		ldh.sing=function (){
+			console.log('电风扇')
+		}
+		console.log(ldh.name);
+		ldh.sing();
+
+
+		构成函数
+
+		function Str(name,age,sex){
+			this.name=name;
+			this.age=age;
+			this.sex=sex;
+			this.sing=function(){
+				console.log('唱歌')
+			}
+		}
+		var ldh=new Str('刘德华',18,'男')
+		console.log(ldh.name)
+		ldh.sing();
+
+		// var a=new Date();
+		// console.log(a);
+		// console.log(a());
+		// console.log(Date())
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		function nian(year){
+			var ff=false;
+			if(year%4==0&&year%100!=0||year%400==0){
+				ff=true;
+			}
+			return ff;
+		}
+		
+		function tian(year,moth,day){
+			var days=day;
+
+			for(var i=1;i<moth;i++){
+				if(i==4||i==6||i==9||i==11){
+					days+=30;
+				}else if(i==2){
+					if(nian(year)){
+						days+=29;
+					}else{
+						days+=28;
+					}
+				}else{
+					days+=31;
+				}
+			}
+			return days;
+		}
+		console.log(tian(2008,3,3));
+		console.log(tian(2009,3,3));
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

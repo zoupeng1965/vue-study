@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	1.js的三种书写位置
+	 A内嵌js,在head中添加script标签,所有js标签都放在script标签中
+	 <head>
+	 	<script>
+	 		alert('word');
+	 	</script>
+	 </head>
+
+	 B外链js,
+	 	<script src="....."></script>
+	 	外链与内嵌不能写在一起
+	 C行内JS
+	 	<input type="button" value="点我" onclick="alert('爱情')">
+	 	<!-- <input type="button" value="点我试试" onclick="alert('Hello World')" /> -->
+
+
+	2.JS的三种输入输出
+	 A 弹出警示框 alert('爱情');
+	 B 控制台打印 console.log('爱情');
+	 C 提示输入框 prompt('喜欢的明星');
+
+
+	3.变量的基本使用
+	A var num=20;
+	B var num=20,num1=30,num2=40;
+	
+	5.数据类型
+		a 数值类型number 
+		 var a=123; 
+		 所有不加逗号的数字 1,2,3 
+		 isNaN(x)方法问老师
+
+		b 字符串类型string 
+			var b='1'  var c='爱情' 文字,所有有逗号表示的都是
+			转义字符 \n,\r,换行
+
+			字符串长度.length
+			var strMsg ="我是帅气多金的程序猿！--- 恩，我看出了你的自信。";
+        	alert(strMsg.length); // 显示 26
+
+        	字符串拼接
+        	口诀:数值相加    字符相连,只要是有字符都是相连,
+        	var age=3,num67=75;
+			console.log(age+num67);
+			var i=2,j=3,sum=i*j;
+			console.log(i+'*'+j+'='+sum)
+			显示2*3=6
+
+			检查数据类型检测
+			var num = 10;
+        	console.log(typeof num);
+
+        	数据类型的转换
+        	1. toSting();  转换为字符型
+        		var num=10;
+        		conlole.log(num.tosting());
+        		 console.log(typeof num.toString());
+        	2. String()  转换为字符型
+        	var num1 = 66;
+            console.log(String(num1)); 
+			3. 利用 +  转换字符串   字符相连 
+			console.log(10 + '岁'); // '10岁'
+        	console.log(10 + '' + 30); // '1030'
+
+		 
+
+		
+
+		6.数据类型转换
+		toString()转换为字符型
+		parseInt()转换为数值
+		
+</body>
+</html>

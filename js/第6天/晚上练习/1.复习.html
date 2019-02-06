@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    ----------------------复习---------------------
+    1.函数的练习
+        反转数组
+        求最大值
+        冒泡排序
+        求闰年
+        求1年中的多少天
+    
+    2.概念性的知识点
+        内置的实参对象:arguments
+        作用域: 一个变量的作用范围----全局变量和局部变量
+            全局变量有两种: 1.在大括号外面定义的变量
+                           2.在函数内部,未使用var声明,但直接赋值的变量.
+
+            局部变量有两种: 1.在函数大括号里面定义的变量
+                           2.在函数定义括号中的形参
+        作用域链:全局变量和局部变量是一个相对概念, 人外有人,天外有天
+        预解析:提前解析,将变量声明和函数声明提前.
+
+    3.函数的其他写法
+
+        基本函数写法:
+            function sayHi(){}
+            sayHi();
+        匿名函数:
+            function(){}
+
+        函数表达式
+            var fn=function(){}
+            fn();
+        
+        自调用函数: 
+            (function(){})()
+              
+    ------------------------预习--------------------------------------------
+    1.对象
+        万物皆对象. 万物皆东西. 万物皆事物. 现实中事物如何用计算机来描述,这就是面向对象的语法.
+        对象写法: 
+            1.字面量对象写法 
+                var ldh={
+                    name:"刘德华",
+                    age:18,
+                    sex:"男",
+                    sing:function(){
+                        console.log("唱歌");
+                    }
+                }
+
+                console.log(ldh.name)
+                ldh.sing();
+            
+            2.new Object()对象创建写法, 
+                var ldh=new Object();
+                ldh.name="刘德华";
+                ldh.age=18;
+                ldh.sex="男";
+                ldh.sing=function(){
+                    console.log("唱歌");
+                }
+
+                console.log(ldh.name);
+                ldh.sing();
+            
+            3.构造函数创建对象写法.
+                
+                function Stars(name,age,sex){
+                    this.name=name;
+                    this.age=age;
+                    this.sex=sex;
+                    this.sing=function(){
+                        console.log("唱歌");
+                    }
+
+                }
+
+                var ldh = new Stars("刘德华",18,"男");
+                console.log(ldh.name);
+                ldh.sing();
+
+                注意: 构造函数就是用来创建对象的函数
+                      1.构造函数名字必须首字母大写
+                      2.通过this关键字给属性赋值
+                      3.创建对象,使用new 构造函数名实现.
+    
+    2.内置对象
+        Math数学对象
+        Date时间对象
+        数组对象
+        字符串对象
+
+    
+    ------------------------拓展--------------------------------------------
+    vue.js
+    react reactNative
+    微信小程序
+    github.com
+    --------------------------------------------------------------------------
+    1.变量 数据类型  数据类型转换,数据类型检测   
+    2.条件判断: 单向,双向,多向,精准,三元
+    3.循环: for while do-while
+    4.数组
+    5.函数
+    6.对象
+    7.内置对象
+
+    练习: 
+
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		function Dog(name,type,color){
+			//tuis.name是当前doge对象自己的名字,但是没有具体指
+			//括号中的name是函数调用时给的具体名字,列如张三,
+			this.name=name;
+			this.type=type;
+			this.color=color;
+			this.eat=function(){
+				console.log(this.name+'--'+this.type+'--'+this.color);
+				console.log('小黑吃的很快')
+			}
+		}
+
+		//给这个狗确定名字,类型和颜色,并且调用它的eat方法,进行打印
+		var mydog=new Dog("小黑","中华田园犬","红色");
+		mydog.eat();
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

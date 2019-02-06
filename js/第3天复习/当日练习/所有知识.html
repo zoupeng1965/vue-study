@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		//1认识变量
+			var a=100;
+			console.log("哥们,字母表里第一个字母");
+			console.log('a');
+			//加括号了,就是字母a,不是变量,输出字母a,而不是输出100
+			console.log(a);  //输出100
+
+
+		//变量的类型
+			var a=100;  //存放一个变量
+			var b='传智播客'   //存放一个变量
+			console.log(a);    //输出变量a
+			console.log(b);    //输出变量b
+
+
+
+		//number数据类型
+			var a=100;          //类型是nunmber
+			var b=232234434;  	//类型是number
+			var c=3.4455555	;	//类型是number
+			var d=-232234434;	//类型是nunmber
+			var e=34.555555;	//类型是number
+			var f=0.343454;		//类型是number	
+
+			console.log(typeof a);	//number
+			console.log(typeof b); //number
+			console.log(typeof c); //number
+			console.log(typeof d); //number
+			console.log(typeof e);//number
+			console.log(typeof f );//number
+
+		//string类型
+			var a='fdfs';			//有引号,字符串
+			var b='传智播客';		//有引号,字符串
+			var c='342424';			//有引号,字符串
+
+
+		//加好练习
+			console.log('我'+'爱'+'你')
+			// 连子符,把三个独立的汉字,链接在一起
+			console.log("我+爱+你")  //原样输出
+			console.log(1+2+3)       //输出6
+
+		//取余数练习
+		    var a=13%5;
+		    console.log(a);        //输出3
+
+		    console.log(10%5);		//输出0
+		    console.log(18%9);		//输出0
+		    console.log(12%7);		//输出5
+		    console.log(3%5); 		//输出3
+
+
+		    var a=1+2+3+4%4/3;
+		    console.log(a);         //输出6
+
+		    var a=(1+2)%4*3+5
+		    console.log(a);			//输出14
+
+		  //注意事项
+		  	var a=prompt('请输入第一个数字');
+		  	var b=prompt('请输入第二个数字');
+		  	var result=a+b;
+		  	alert(result);
+
+
+
+
+
+
+			//逻辑运算
+				//&&表示"且"的意思,都真才真
+					console.log(true && true);		//true
+					console.log(true && false);
+					//false
+
+				//||表示'或者'的意思,有真就真
+					console.log(true||true)   //true
+
+
+
+				//9if语句
+					//第一步,让用户输入成绩
+					var score=parseFloat(prompt('请输入您的成绩'))
+
+				//第二部判断
+					if(score>=60){
+						alert('恭喜')
+					}else{
+						slert('加油')
+					}
+				//汽车加油
+
+				var biaohao=prompt('请输入汽油标号')
+				var ss=prompt('加多少油')
+				if(biaohao=92){
+
+					if(ss>=20){
+						alert(ss*6)
+					}else{
+						alert(ss*7)
+					}
+				}else if(biaohao=95){
+					if(ss>=20){
+						alert(ss*8)
+					}else{
+						alert(ss*9)
+					}
+				}else{
+					alert('不想服务您')
+				}
+
+				alert('价格是'+price)
+
+
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		----------------------复习-----------------------------
+		1函数的练习
+		 	翻转数组
+		 	求最大值
+		 	冒泡排序
+		 	求闰年
+		 	求一年中的多少天
+
+		 2概念性的知识点
+		 	内置的实参对象:arguments;
+		 	作用域:一个变量的作用范围----全局变量和局部变量
+
+		 		全局变量有两种:1在大括号外面定义的变量
+		 		在函数内部,未使用VAR申明,但直接赋值的变量
+
+		 		局部变量有两种:1在函数大括号里面定义的变量
+		 						2在函数定义括号的形参
+
+		 		作用域链:全局变量和据不去变量是一个相对概念,人外有人,天外有天
+		 		预解析:提前解析,将变量申明和函数声明提前
+
+
+		 	3函数的其他写法
+
+		 		基本函数写法:
+		 			function sayHI(){}
+		 			sayHI();
+
+		 		匿名函数:
+		 		function(){}
+		 		函数表达式
+		 		var  fn=function(){}
+		 			fn()
+		 		自调用函数
+		 		(function({}))()
+
+		 		----------------------------------------------
+		 	1预习
+		 		万物皆对象,万物皆对象,万物皆事物,现实中事物如何用计算机来描述,这就是面向对象的语法
+
+
+		 		对象写法:
+		 		1字面量对象写法
+		 			var ldh={
+		 				name:'刘德华',
+		 				age:18,
+		 				sex:'男',
+		 				sing:function(){
+		 					console.log('唱歌')
+		 				}
+		 			}
+		 			console.log(ldh.name);
+		 			ldh.sing();
+		 		2 new Object()对象创建写法,
+		 			var ldh=new Ojict();
+		 			ldh.name='刘德华';
+		 			ldh.age=18;
+		 			ldh.sex='男';
+		 			ldh.sing=function(){
+		 				console.log('唱歌');
+		 			}
+
+		 			console.log(ldh.name);
+		 			ldh.sing();
+
+		 		3构造函数创建对象写法
+
+		 			function Stars(name,age,sex){
+		 				this.name=name;
+		 				this.age=age;
+		 				this.sex=sex;
+		 				this.sing=function(){
+		 					console.log('唱歌')
+		 				}
+		 			}
+
+		 			var ldh=new Stars('刘德华',18,'男');
+		 			console.log(ldh.name);
+		 			ldh.sing();
+
+		 			注意:构造函数就是用来创建对象的函数
+		 				1构造函数名字必须首字母大写
+		 				2通过this关键字给属性赋值
+		 				3创建对象,使用new构造函数实现
+
+
+		 		2内置对象
+		 			Math数学对象
+		 			Date时间对象
+		 			数组对象
+		 			字符串对象
+
+
+								 		```jav ascript
+						Math.floor() 	              // 向下取整
+						Math.PI          // 圆周率
+						Math.ceil()                   // 向上取整
+						Math.round()				// 四舍五入版 就近取整   注意 -3.5   结果是  -3 
+						Math.abs()					// 绝对值
+						Math.max()/Math.min()		 // 求最大和最小值
+						Math.sin()/Math.cos()		 // 正弦/余弦
+						Math.power()/Math.sqrt()	 // 求指数次幂/求平方根
+
+
+
+
+
+												var myMath = {
+						    PI: 3.141592653,
+						    max: function() {
+						        var max = arguments[0];
+						        for (var i = 0; i < arguments.length; i++) {
+						            if (max < arguments[i]) {
+						                max = arguments[i];
+						            }
+						        }
+						        return max;
+						    },
+						    min: function() {
+						        var min = arguments[0];
+						        for (var i = 0; i < arguments.length; i++) {
+						            if (min > arguments[i]) {
+						                min = arguments[i];
+						            }
+						        }
+						        return min;
+						    }
+						};
+						
+						console.log(myMath.max(1, 6, 8, 9));
+						console.log(myMath.min(1, 6, 8, 9));
+				
+				
+	-----------------------------------------------------------------------------
+
+
+		 		 for in 遍历 对象
+
+					~~~js
+					var obj = {
+					     name: 'andy',
+					     age: 18,
+					     sex: '男'
+					}
+					console.log(obj.length); // undefined
+					for (var k in obj) {
+					    console.log(k); // 这里的k 是属性名
+					    console.log(obj[k]); // 这里的 obj[k] 是属性值
+					}
+
+
+				1.9 遍历 JSON格式
+
+					**JSON**(JavaScript Object Notation) 是一种轻量级的数据交换格式。 易于人阅读和编写。
+					
+					1. JSON 数据的书写格式是：名称/值对。
+					2. 里面的属性和值都要用 双引号 括起来
+					
+					~~~
+					 var json = {
+					     "id": "1",
+					     "name": "andy",
+					      "age": "18",
+					      "tel": "110120"
+					 }
+					 for (var k in json) {
+					    console.log(k); // 这里的k 是属性名
+					    console.log(obj[k]); // 这里的 obj[k] 是属性值
+					}
+										
+
+	</script>
+</head>
+<body>
+	---------------------------------
+</body>
+</html>
